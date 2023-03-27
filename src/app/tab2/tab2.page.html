@@ -1,17 +1,33 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      HISTORIAL
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <ul *ngFor="let cabina of show()">
+    <li >
+      <ion-label>{{ cabina.nombre }}</ion-label>
+      <br>
+      <ul *ngFor="let llamada of cabina.llamadas; let i = index">
+        <li >
+          <span>========== LLAMADA : {{ i }} ==========</span>
+        </li>
+        <li >
+          <span>Numero: {{ llamada.numero }}</span>
+        </li>
+        <li >
+          <span>Duracion: {{ llamada.duracion }} min</span>
+        </li>
+        <li >
+          <span>Precio: {{ llamada.precio }}</span>
+        </li>
+        <li >
+          <span>===============================</span>
+        </li>
+      </ul>
+    </li>
+  </ul>
 </ion-content>

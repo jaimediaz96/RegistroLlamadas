@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Inicio de sesión
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">Nombre de usuario</ion-label>
+    <ion-input type="text" [(ngModel)]="username"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Contraseña</ion-label>
+    <ion-input type="password" [(ngModel)]="password"></ion-input>
+  </ion-item>
+
+  <ion-button expand="block" (click)="onSubmit()">Iniciar sesión</ion-button>
+
+  <ion-item>
+    <ion-label *ngIf="error">USUARIO O CONTRASEÑA INCORRECTOS</ion-label>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Profe las credenciales son:</ion-label>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label>Usuario: Ricardo Jorge</ion-label>
+    <ion-label>Contraseña: 123</ion-label>
+  </ion-item>
+
+</ion-content>

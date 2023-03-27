@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CabinasService } from '../servicios/cabinas.service';
 
 @Component({
   selector: 'app-tab2',
@@ -8,5 +9,9 @@ import { Component } from '@angular/core';
 export class Tab2Page {
 
   constructor() {}
+
+  show() {
+    return CabinasService.listCabinas;
+  }
 
 }

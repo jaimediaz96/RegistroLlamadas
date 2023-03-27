@@ -1,17 +1,42 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      CABINAS
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <ion-list class="tittle">
+    <ion-item *ngFor="let c of cabina(); let i = index">
+      <ion-title>{{ c.nombre }}</ion-title>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-input placeholder="Numero telefonico" [(ngModel)]="c.numero" (input)="habilitarBoton(i)"></ion-input>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-button class="btn" [disabled]="!c.botonInicio" (click)="iniciar(i)">Iniciar llamada</ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button class="btn" [disabled]="!c.botonFinal" (click)="obtenerTiempoTranscurrido(i)">Finalizar llamada </ion-button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-label>Costo de la llamada:</ion-label>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-label>{{ c.precio }}</ion-label>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-list>
 </ion-content>
+
+

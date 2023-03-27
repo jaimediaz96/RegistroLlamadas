@@ -1,0 +1,24 @@
+.title {
+  display: inline-block;
+  font-size: 1.2rem;
+  margin: 0;
+  padding: 0;
+  width: 80px;
+}
+
+
+.btn {
+  font-weight: 0;
+  font-size: 14px;
+  color: #fff;
+  background-color: #0066cc;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.label {
+    margin-bottom: 10px;
+}
