@@ -6,34 +6,23 @@ interface Llamada {
   precio: number;
 }
 
+interface Cabinas {
+  nombre: string;
+  numero: string;
+  precio: string;
+  tiempo: string;
+  timeStart: number;
+  timeInterval: any;
+  botonInicio: boolean;
+  botonFinal: boolean;
+  llamadas: Llamada[];
+}
+
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CabinasService {
+  public static listCabinas = [] as Cabinas[];
 
-  public static listCabinas = [{
-    nombre: "Cabina 1",
-    numero: "",
-    precio: "",
-    llamadas: [] as Llamada[],
-    botonInicio: false,
-    botonFinal: false
-  }, {
-    nombre: "Cabina 2",
-    numero: "",
-    precio: "",
-    llamadas: [] as Llamada[],
-    botonInicio: false,
-    botonFinal: false
-  }, {
-    nombre: "Cabina 3",
-    numero: "",
-    precio: "",
-    llamadas: [] as Llamada[],
-    botonInicio: false,
-    botonFinal: false
-  }];
-
-  constructor() {
-  }
+  constructor() {}
 }

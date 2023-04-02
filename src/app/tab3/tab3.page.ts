@@ -38,6 +38,17 @@ export class Tab3Page {
     } , 0);
   }
 
+  totalLlamadas(index: number) {
+    return CabinasService.listCabinas[index].llamadas.length;
+  }
+
+  totalL() {
+    return CabinasService.listCabinas.reduce((total, cabina) => {
+      const cantLlamadas = cabina.llamadas.length;
+      return total + cantLlamadas;
+    },0);
+  }
+
   show() {
     return CabinasService.listCabinas;
   }
