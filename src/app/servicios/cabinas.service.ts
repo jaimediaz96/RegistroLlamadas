@@ -4,6 +4,7 @@ interface Llamada {
   numero: string;
   duracion: number;
   precio: number;
+  fecha: string;
 }
 
 interface Cabinas {
